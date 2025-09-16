@@ -14,7 +14,7 @@
                     <section class="flex items-center justify-start">
                         <img
                         class="w-[60px] mr-4" 
-                        src="{{ asset('images/'.$product->arquivo) }}">
+                        src="{{ asset('storage/images/'.$product->arquivo) }}">
 
                         <h2>{{ $product->name }}</h2>
                     </section>

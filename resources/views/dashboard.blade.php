@@ -18,6 +18,14 @@
     <body>
         @include('components.application-header', ['location' => 'dashboard'])
         <main>
+            <section class="mx-auto w-full md:max-w-7xl">
+                @if (session('success'))
+                    <p class="bg-green-100 p-3 my-1 rounded-md border border-green-600">{{ session('success') }}</p>
+                @elseif(session('error'))
+                    <p class="bg-red-100 p-3 rounded-md border border-red-600">{{ session('success') }}</p>
+                @endif
+            </section>
+
             @include('components.list', compact('products'))
         </main>
     </body>

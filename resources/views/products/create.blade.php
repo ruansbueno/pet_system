@@ -18,6 +18,12 @@
     <body>
         @include('components.application-header', ['location' => 'dashboard'])
         <main class="mx-auto w-full md:max-w-7xl px-2 py-5">
+            @if ($errors->any())
+                @foreach ($errors->all() as $error)
+                    <p class="bg-red-100 p-3 mb-3 rounded-md border border-red-600">{{ $error }}</p>
+                @endforeach
+            @endif
+
             @include('components.form-create')
         </main>
     </body>
