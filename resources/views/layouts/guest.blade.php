@@ -25,6 +25,8 @@
             <div class="w-full sm:max-w-md mt-6 px-6 py-4 bg-white shadow-md overflow-hidden sm:rounded-lg">
                 {{ $slot }}
             </div>
+
+            <p class="mt-5" >Ainda não possui conta? <a class="text-lime-700 hover:border-b hover:border-b-lime-700 pb-1 duration-300" href="{{ route('register') }}">Criar Conta</a></p>
         </div>
     </body>
 </html>

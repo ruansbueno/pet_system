@@ -18,6 +18,14 @@ class Users extends Seeder
             'password' => Hash::make('senha123'),
             'created_at' => now(),
             'updated_at' => now(),
-        ]);
+        ],
+        [
+            'name' => 'Thiago',
+            'email' => 'thiagosbueno@gmail.com',
+            'password' => Hash::make('senha123'),
+            'created_at' => now(),
+            'updated_at' => now(), 
+        ]
+    );
     }
 }

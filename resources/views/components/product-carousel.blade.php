@@ -7,7 +7,7 @@
                 <a href="" class="flex items-center justify-center flex-wrap p-3 mt-2">
                     <img 
                     class="h-[220px]"
-                    src="{{ asset('images/'.$product->arquivo) }}">
+                    src="{{ asset('storage/images/'.$product->arquivo) }}">
                     <p class="text-lg leading-none mt-4">{{ $product->name }}</p>
                     <p class="text-xl text-lime-600 mt-2 font-bold">R${{ $product->price }}</p>
                     <span class="absolute right-1 top-1 bg-teal-400 rounded-md text-white px-2">{{ $product->weight }} Kg</span>

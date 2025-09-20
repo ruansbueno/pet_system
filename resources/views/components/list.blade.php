@@ -19,16 +19,25 @@
                         <h2>{{ $product->name }}</h2>
                     </section>
                     <section class="flex items-center justify-end gap-x-2">
-                        <a href="{{ route('products.edit', $product->id) }}" class="text-white bg-lime-600 rounded-md px-3 py-2 text-xl">
-                            <i class="fas fa-pencil-alt"></i>
-                        </a>
-                        <form method="post" action="{{ route('products.destroy', $product->id) }}">
-                            @csrf
-                            @method('delete')
-                            <button type="submit" class="text-white bg-red-500 rounded-md px-3 py-2 text-xl">
+                        @if(Auth::id() == $product->author)
+                            <a href="{{ route('products.edit', $product->id) }}" class="text-white bg-lime-600 rounded-md px-3 py-2 text-xl">
+                                <i class="fas fa-pencil-alt"></i>
+                            </a>
+                            <form method="post" action="{{ route('products.destroy', $product->id) }}">
+                                @csrf
+                                @method('delete')
+                                <button type="submit" class="text-white bg-red-500 rounded-md px-3 py-2 text-xl">
+                                    <i class="fas fa-trash"></i>
+                                </button>
+                            </form>
+                        @else
+                            <div class="text-black bg-gray-300 rounded-md px-3 py-2 text-xl">
+                                <i class="fas fa-pencil-alt"></i>
+                            </div>
+                            <div class="text-black bg-gray-300 rounded-md px-3 py-2 text-xl">
                                 <i class="fas fa-trash"></i>
-                            </button>
-                        </form>
+                            </div>
+                        @endif
                     </section>
                 </li>
             @endforeach

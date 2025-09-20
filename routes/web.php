@@ -13,4 +13,7 @@ Route::middleware('auth')->group(function () {
     Route::resource('products', ProductController::class);
 });
 
+Route::post('/logout', [AuthenticatedSessionController::class, 'destroy'])
+    ->name('logout');
+
 require __DIR__.'/auth.php';

@@ -17,6 +17,13 @@
                 </li>
             </ul>
         </nav>
+        @else
+            <form method="POST" action="{{ route('logout') }}">
+                @csrf
+                <button type="submit">
+                    <i class="fas fa-sign-out-alt"></i> Sair
+                </button>
+            </form>
         @endif
     </div>
 </header>
