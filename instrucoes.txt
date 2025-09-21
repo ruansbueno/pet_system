@@ -1,0 +1,13 @@
+php -r "eval('?>'.file_get_contents('https://getcomposer.org/installer'));"
+
+◦ echo @php "%~dp0composer.phar" %*>composer.bat
+
+composer -V
+
+php artisan migrate
+
+php artisan migrate:fresh --seeds
+
+remover public/storage
+
+php artisan storage:link
